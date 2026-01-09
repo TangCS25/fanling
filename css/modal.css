@@ -100,7 +100,7 @@
   width: 100%;
   border-radius: 8px;
   object-fit: contain;
-  max-height: min(600px, 80vh);
+  max-height: min(700px, 85vh);
 }
 
 .photo-caption {
@@ -206,7 +206,7 @@
   }
 
   .photo {
-    max-height: min(500px, 70vh);
+    max-height: min(600px, 75vh);
   }
 
   .vn-dialogue {
@@ -228,7 +228,7 @@
 
 @media (max-height: 600px) {
   .photo {
-    max-height: min(400px, 55vh);
+    max-height: min(450px, 60vh);
   }
 
   .vn-dialogue {
