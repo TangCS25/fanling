@@ -22,7 +22,7 @@
 .modal-dialog {
   position: relative;
   z-index: 1;
-  max-width: min(1240px, 70vw);
+  max-width: min(1240px, 80vw);
   width: 100%;
   max-height: 100vh;
   padding: 4px 4px 10px;
@@ -67,6 +67,7 @@
   opacity: 0;
   transform: translateY(8vh) scale(0.8) rotate(-3deg);
   will-change: transform, opacity;
+  margin-top: 30px;
 }
 
 .polaroid-card.animate-from-envelope {
