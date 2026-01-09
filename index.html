@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>生日快乐 ✦</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/envelope.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+  </head>
+  <body>
+    <!-- Orientation overlay -->
+    <div id="rotate-overlay">
+      <div class="rotate-content">
+        <div class="rotate-icon">📱↻</div>
+        <p class="rotate-text-cn">请将手机旋转到横屏观看</p>
+        <p class="rotate-text-en">Please rotate your phone to landscape</p>
+      </div>
+    </div>
+
+    <!-- Main app container -->
+    <div id="app">
+      <main class="scene">
+        <div class="sparkle-layer sparkle-layer--front"></div>
+        <div class="sparkle-layer sparkle-layer--back"></div>
+
+        <section class="envelope-section">
+          <button
+            id="envelope-button"
+            class="envelope-button"
+            type="button"
+            aria-label="Open birthday letter"
+          >
+            <img
+              src="assets/images/envelope.png"
+              alt="Cute envelope"
+              class="envelope-image"
+              draggable="false"
+            />
+          </button>
+          <p class="envelope-subtitle">点开看看 · Tap to open</p>
+        </section>
+      </main>
+
+      <!-- Modal -->
+      <div id="letter-modal" class="modal" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-dialog" role="dialog" aria-modal="true">
+          <button
+            id="modal-close"
+            class="modal-close"
+            type="button"
+            aria-label="Close letter"
+          >
+            ✕
+          </button>
+
+          <div class="polaroid-card">
+            <div class="photo-wrapper">
+              <img
+                src="assets/images/fnc.png"
+                alt="Our memory"
+                class="photo"
+                draggable="false"
+              />
+            </div>
+            <div class="photo-caption">
+              いつもそばにいてくれて、ありがとう。
+            </div>
+          </div>
+
+          <div class="vn-dialogue">
+            <div class="vn-dialogue-inner">
+              <div class="vn-name" id="vn-name" data-name="周芳琳"></div>
+              <div class="vn-text">
+                <span id="dialogue-text"></span
+                ><span id="dialogue-caret" class="dialogue-caret">▌</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio id="bgm" src="assets/audio/bgm.mp3" preload="auto"></audio>
+
+    <script src="js/audio.js"></script>
+    <script src="js/dialogue.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
+
