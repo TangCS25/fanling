@@ -29,16 +29,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  gap: 8px;
+  justify-content: center;
   transform-origin: center;
   opacity: 0;
   transform: translateY(16px) scale(0.94);
   transition:
     opacity 0.25s ease-out,
     transform 0.25s ease-out;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: visible;
 }
 
 .modal.is-open .modal-dialog {
@@ -101,7 +99,7 @@
   width: 100%;
   border-radius: 8px;
   object-fit: contain;
-  max-height: min(500px, 60vh);
+  max-height: min(600px, 80vh);
 }
 
 .photo-caption {
@@ -115,7 +113,7 @@
 
 /* Visual novel style dialogue bar */
 .vn-dialogue {
-  margin-top: 0;
+  margin-top: -40px;
   width: 100%;
   position: relative;
   z-index: 3;
@@ -125,7 +123,8 @@
     opacity 1s ease-out,
     transform 1s ease-out;
   flex-shrink: 0;
-  max-height: 40vh;
+  max-height: 50vh;
+  min-height: 200px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -169,7 +168,7 @@
   line-height: 1.6;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  max-height: 35vh;
+  max-height: 45vh;
   overflow-y: auto;
 }
 
@@ -206,12 +205,13 @@
   }
 
   .photo {
-    max-height: min(400px, 50vh);
+    max-height: min(500px, 70vh);
   }
 
   .vn-dialogue {
-    max-height: 45vh;
-    margin-top: 4px;
+    max-height: 55vh;
+    min-height: 180px;
+    margin-top: -30px;
   }
 
   .vn-dialogue-inner {
@@ -221,21 +221,23 @@
 
   .vn-text {
     font-size: 0.9rem;
-    max-height: 40vh;
+    max-height: 50vh;
   }
 }
 
 @media (max-height: 600px) {
   .photo {
-    max-height: min(350px, 45vh);
+    max-height: min(400px, 55vh);
   }
 
   .vn-dialogue {
-    max-height: 50vh;
+    max-height: 60vh;
+    min-height: 160px;
+    margin-top: -25px;
   }
 
   .vn-text {
-    max-height: 45vh;
+    max-height: 55vh;
     font-size: 0.85rem;
   }
 }
