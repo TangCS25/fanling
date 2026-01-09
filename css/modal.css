@@ -29,13 +29,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 8px;
   transform-origin: center;
   opacity: 0;
   transform: translateY(16px) scale(0.94);
   transition:
     opacity 0.25s ease-out,
     transform 0.25s ease-out;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .modal.is-open .modal-dialog {
@@ -98,7 +101,7 @@
   width: 100%;
   border-radius: 8px;
   object-fit: contain;
-  max-height: min(600px, 80vh);
+  max-height: min(500px, 60vh);
 }
 
 .photo-caption {
@@ -112,7 +115,7 @@
 
 /* Visual novel style dialogue bar */
 .vn-dialogue {
-  margin-top: -40px; /* overlap更多到底部 */
+  margin-top: 0;
   width: 100%;
   position: relative;
   z-index: 3;
@@ -121,6 +124,10 @@
   transition:
     opacity 1s ease-out,
     transform 1s ease-out;
+  flex-shrink: 0;
+  max-height: 40vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .vn-dialogue.is-visible {
@@ -160,6 +167,10 @@
 .vn-text {
   font-size: 0.95rem;
   line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-height: 35vh;
+  overflow-y: auto;
 }
 
 .dialogue-caret {
@@ -185,12 +196,47 @@
 }
 
 @media (max-width: 812px) {
+  .modal-dialog {
+    max-width: 95vw;
+    padding: 4px 4px 8px;
+  }
+
   .polaroid-card {
-    padding: 14px 15px 18px;
+    padding: 0;
+  }
+
+  .photo {
+    max-height: min(400px, 50vh);
+  }
+
+  .vn-dialogue {
+    max-height: 45vh;
+    margin-top: 4px;
   }
 
   .vn-dialogue-inner {
     padding: 8px 12px;
+    max-height: 100%;
+  }
+
+  .vn-text {
+    font-size: 0.9rem;
+    max-height: 40vh;
+  }
+}
+
+@media (max-height: 600px) {
+  .photo {
+    max-height: min(350px, 45vh);
+  }
+
+  .vn-dialogue {
+    max-height: 50vh;
+  }
+
+  .vn-text {
+    max-height: 45vh;
+    font-size: 0.85rem;
   }
 }
 
